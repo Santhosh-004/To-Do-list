@@ -11,7 +11,7 @@ h1 {
 }
 
 input {
-    width: 450px;
+    width: 70%;
     margin: 20px 0px;
     padding: 10px 20px;
     border: 2px solid #C0EEF2;
@@ -33,6 +33,5 @@ input {
 }
 
 #input-box {
-    width: 90%;
     margin: 0px auto;
 }
