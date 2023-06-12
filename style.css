@@ -1,0 +1,38 @@
+body {
+    background-color: #181823;
+    color: #E9F8F9;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-family: 'Audiowide', cursive;
+    font-size: 50px;
+}
+
+input {
+    width: 450px;
+    margin: 20px 0px;
+    padding: 10px 20px;
+    border: 2px solid #C0EEF2;
+    border-radius: 5px;
+    background-color: #181823;
+    color: #C0EEF2;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+#add-btn {
+    padding: 10px 15px;
+    border: 2px solid #C0EEF2;
+    border-radius: 5px;
+    background-color: #181823;
+    color: #E9F8F9;
+    font-family: 'Poppins', sans-serif;
+}
+
+#input-box {
+    width: 90%;
+    margin: 0px auto;
+}
