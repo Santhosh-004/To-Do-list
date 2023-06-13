@@ -32,6 +32,11 @@ input {
     font-family: 'Poppins', sans-serif;
 }
 
+#add-btn:active {
+    background-color: #537FE7;
+    color: #C0EEF2;
+}
+
 #input-box {
     margin: 0px auto;
 }

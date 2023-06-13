@@ -36,15 +36,17 @@ render();
 
 function add_task() {
     let e_task = document.getElementById("task-inp");
-    console.log(e_task.value);
-    tasks.push(e_task.value);
-    complete.push(false);
-    e_task.value = "";
-    localStorage.setItem("stored-tasks", JSON.stringify(tasks));
-    localStorage.setItem("completed", JSON.stringify(complete));
-    console.log("stored", JSON.parse(localStorage.getItem("stored-tasks")));
-    console.log("completed", JSON.parse(localStorage.getItem("completed")));
-    render();
+    if (e_task.value != "") {
+        console.log(e_task.value);
+        tasks.push(e_task.value);
+        complete.push(false);
+        e_task.value = "";
+        localStorage.setItem("stored-tasks", JSON.stringify(tasks));
+        localStorage.setItem("completed", JSON.stringify(complete));
+        console.log("stored", JSON.parse(localStorage.getItem("stored-tasks")));
+        console.log("completed", JSON.parse(localStorage.getItem("completed")));
+        render();
+    }
 }
 
 function find_element(event, remove) {
