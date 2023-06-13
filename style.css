@@ -35,3 +35,30 @@ input {
 #input-box {
     margin: 0px auto;
 }
+
+.border-task {
+    display: flex;
+    margin: 10px auto;
+    width: 70%;
+    list-style-type: none;
+    border: 2px solid #C0EEF2;
+    border-radius: 5px;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#input-box {
+    margin-bottom: 30px;
+}
+
+.right {
+    width: 20px;
+    height: 20px;
+}
+
+.left {
+    width: 70%;
+    text-align: start;
+}
