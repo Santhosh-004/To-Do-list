@@ -20,8 +20,8 @@ function render() {
             </div>`;
         }
         taskEl.innerHTML = messages;
-        console.log(tasks);
-        console.log(complete);
+        //console.log(tasks);
+        //console.log(complete);
         for (let i=0; i<complete.length; i++) {
             if (complete[i] == true) {
                 document.getElementById(`task-${i+1}`).style.backgroundColor = "green";
@@ -37,41 +37,41 @@ render();
 function add_task() {
     let e_task = document.getElementById("task-inp");
     if (e_task.value != "") {
-        console.log(e_task.value);
+        //console.log(e_task.value);
         tasks.push(e_task.value);
         complete.push(false);
         e_task.value = "";
         localStorage.setItem("stored-tasks", JSON.stringify(tasks));
         localStorage.setItem("completed", JSON.stringify(complete));
-        console.log("stored", JSON.parse(localStorage.getItem("stored-tasks")));
-        console.log("completed", JSON.parse(localStorage.getItem("completed")));
+        //console.log("stored", JSON.parse(localStorage.getItem("stored-tasks")));
+        //console.log("completed", JSON.parse(localStorage.getItem("completed")));
         render();
     }
 }
 
 function find_element(event, remove) {
     deleteEl = event.target
-    console.log("event target :", deleteEl.id);
+    //console.log("event target :", deleteEl.id);
     let num = ((deleteEl.id).split("-"))[1];
     num = num.split(",")[0];
     if (remove) {
         num = ((deleteEl.id).split("-"))[1];
-        console.log("num in remove", num);
+        //console.log("num in remove", num);
         remove_task(num);
     } else {
         
         let new_mess = `task-${num}`;
-        console.log("num in color", num);
+        //console.log("num in color", num);
 
         if (document.getElementById(new_mess).style.backgroundColor === "rgb(24, 24, 35)") {
             document.getElementById(new_mess).style.backgroundColor = "green";
             complete[num-1] = true;
-            console.log(num-1, complete);
+            //console.log(num-1, complete);
             localStorage.setItem("completed", JSON.stringify(complete));
         } else {
             document.getElementById(new_mess).style.backgroundColor = "rgb(24, 24, 35)";
             complete[num-1] = false;
-            console.log(num-1, complete);
+            //console.log(num-1, complete);
             localStorage.setItem("completed", JSON.stringify(complete));
         }
 
@@ -79,13 +79,13 @@ function find_element(event, remove) {
 }
 
 function remove_task(num) {
-    console.log("num is rem function :", num);
+    //console.log("num is rem function :", num);
     tasks.splice(num-1, 1);
     complete.splice(num-1, 1);
     localStorage.setItem("stored-tasks", JSON.stringify(tasks));
     localStorage.setItem("completed", JSON.stringify(complete));
-    console.log("rem-stored", JSON.parse(localStorage.getItem("stored-tasks")));
-    console.log("rem-completed", JSON.parse(localStorage.getItem("completed")));
+    //console.log("rem-stored", JSON.parse(localStorage.getItem("stored-tasks")));
+    //console.log("rem-completed", JSON.parse(localStorage.getItem("completed")));
     render();
 }
 
