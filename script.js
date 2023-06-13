@@ -9,6 +9,7 @@ function render() {
     if (tasks == null || tasks.length == 0) {
         tasks = [];
         complete = [];
+        taskEl.innerHTML = "";
     } else {
         let messages = "";
         for (let i = 0; i < tasks.length; i++) {
@@ -42,6 +43,7 @@ function add_task() {
     localStorage.setItem("stored-tasks", JSON.stringify(tasks));
     localStorage.setItem("completed", JSON.stringify(complete));
     console.log("stored", JSON.parse(localStorage.getItem("stored-tasks")));
+    console.log("completed", JSON.parse(localStorage.getItem("completed")));
     render();
 }
 
@@ -79,6 +81,9 @@ function remove_task(num) {
     tasks.splice(num-1, 1);
     complete.splice(num-1, 1);
     localStorage.setItem("stored-tasks", JSON.stringify(tasks));
+    localStorage.setItem("completed", JSON.stringify(complete));
+    console.log("rem-stored", JSON.parse(localStorage.getItem("stored-tasks")));
+    console.log("rem-completed", JSON.parse(localStorage.getItem("completed")));
     render();
 }
 
