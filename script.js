@@ -6,7 +6,7 @@ tasks = JSON.parse(localStorage.getItem("stored-tasks"));
 complete = JSON.parse(localStorage.getItem("completed"));
 
 function render() {
-    if (tasks == null) {
+    if (tasks == null || tasks.length == 0) {
         tasks = [];
         complete = [];
     } else {
